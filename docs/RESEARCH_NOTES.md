@@ -4,7 +4,7 @@
 
 The master's thesis examines three independent NFT classification problems: image-based analysis, description-based analysis, and collection-domain analysis. It compares several model families within each problem and discusses the value of combining evidence in future applications.
 
-The thesis is a 2023 master's study. The thesis is in the process of being published, and the author plans to follow up with the thesis advisor. No acceptance decision, publication venue, or DOI has been confirmed.
+The thesis is a 2023 master's study. The thesis is in the process of being published. No acceptance decision, publication venue, or DOI has been confirmed.
 
 ## Limitations discussed in the thesis
 
