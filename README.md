@@ -6,7 +6,7 @@ Research code accompanying a **master's thesis at the University of Belgrade, Sc
 
 **Author:** Stefan Veličković · **Advisor:** Prof. Dr. Boris Delibašić · **Date:** September 2023
 
-**Publication status:** Publication pending; follow-up with the thesis advisor is planned.
+**Publication status:** The thesis is in the process of being published; follow-up with the thesis advisor is planned.
 
 **Original title:** Примена вештачке интелигенције за препознавање лажних и малициозних NFT-ева
 
