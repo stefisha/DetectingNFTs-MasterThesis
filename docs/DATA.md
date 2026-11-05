@@ -2,7 +2,7 @@
 
 ## Availability
 
-The original research datasets are no longer available. Historical experiment reproduction is therefore unavailable. The notebooks expect previously prepared image directories and CSV files. Data acquisition scripts, exact source snapshots, licenses for every item, and split manifests are not supplied.
+The research datasets are not distributed in this repository. To discuss data access and reproducing the experiments, contact [Stefan Veličković](https://github.com/stefisha). The notebooks expect prepared image directories and CSV files in the layout below.
 
 Do not infer dataset redistribution rights from the code's MIT license. NFT artwork, marketplace records, and third-party datasets retain their own terms and ownership.
 
@@ -32,7 +32,7 @@ data/
 
 For local Jupyter, set the environment variable before starting the kernel, for example `export NFT_DATA_ROOT=/path/to/data`. In Colab, mount your own Drive and set `%env NFT_DATA_ROOT=/content/drive/MyDrive/path/to/data` before the data-loading cell. The original Drive layout used `/content/drive/MyDrive/Master/Project/` as its root.
 
-Only supply data you are authorized to use. Replacement datasets cannot recover the historical thesis experiments. Do not commit private datasets or access credentials.
+Only supply data you are authorized to use. Do not commit private datasets or access credentials.
 
 ## Manuscript counts and notebook snapshots
 

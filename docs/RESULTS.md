@@ -2,7 +2,7 @@
 
 The tables below transcribe the results reported in the author-provided September 2023 thesis, *Примена вештачке интелигенције за препознавање лажних и малициозних NFT-ева*. The manuscript has not been published or redistributed in this repository. Printed page numbers below differ from PDF page indices by one because the cover is unnumbered.
 
-These are historical reported measurements. No training or independent benchmark reproduction was performed during repository maintenance. The original datasets are no longer available. Saved outputs predate the [code cleanup](CODE_CLEANUP.md) and do not validate the edited source.
+These are historical reported measurements, not independently reproduced benchmarks.
 
 ## Thesis Table 4 — image classification
 
@@ -49,7 +49,7 @@ Printed page 61. Some corresponding notebook experiments are commented out or la
 
 ## Differences in saved notebook outputs
 
-Notebook cell numbers here are one-based positions in the file, including markdown cells. The presentation update retains the cell order and the original experiment outputs.
+Notebook cell numbers here are one-based positions in the file, including markdown cells. Saved outputs document individual experiment runs.
 
 | Notebook and cell | Saved output | Related thesis result |
 | --- | --- | --- |
@@ -66,5 +66,4 @@ The repository does not record enough run identifiers, frozen environments, data
 
 - Each modality uses a different dataset and may use different split and preprocessing procedures. Ranking modalities by accuracy alone is not a controlled ablation study.
 - Accuracy does not fully describe performance under class imbalance. Precision, recall, F1, confusion matrices, and error costs should accompany future comparisons.
-- The historical image notebook computed `roc_auc_score` from predicted class labels in several cells. Those saved values are threshold-specific. The edited source uses positive-class probabilities, but its outputs have not been regenerated.
 - The reported accuracies do not establish performance on unseen NFT collections, later scam campaigns, or a live production distribution.

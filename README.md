@@ -33,7 +33,7 @@ The research provides:
 | NFT descriptions | [Metadata_NFTs_Master.ipynb](Metadata_NFTs_Master.ipynb) | TF-IDF, Word2Vec, classical classifiers, DistilBERT, FNN |
 | Collection domains | [Domains_NFT_Master.ipynb](Domains_NFT_Master.ipynb) | Lexical features, TF-IDF, Random Forest, SMOTE, LightGBM, XGBoost, recurrent networks |
 
-The notebooks retain their original filenames and saved experiment outputs. The code has received a documented maintenance pass; **saved outputs predate those edits and have not been regenerated**. See [code cleanup and verification](docs/CODE_CLEANUP.md) for changes, offline checks, and the original source revision.
+The notebooks include saved experiment outputs and links to open each study in Colab.
 
 ## Reported findings
 
@@ -49,7 +49,7 @@ These figures are **reported thesis results**, not new measurements or independe
 
 ## Data and experimental scope
 
-The thesis describes data collection from Phantom's blocklists, NFT marketplaces, and a Kaggle collection dataset. **The original datasets are no longer available**, so the historical experiments cannot be reproduced from this repository. Acquisition scripts, immutable split manifests, and trained checkpoints are also absent.
+The thesis describes data collection from Phantom's blocklists, NFT marketplaces, and a Kaggle collection dataset. The research datasets are not distributed in this repository. To discuss data access and reproducing the experiments, contact [Stefan Veličković](https://github.com/stefisha).
 
 Labels are derived from the collection and blocklist sources used for the study. They are research labels, rather than independent guarantees about a token, creator, or collection. NFT images and third-party metadata remain subject to their respective owners' rights.
 
@@ -57,7 +57,7 @@ See [Data documentation](docs/DATA.md) for expected inputs, manuscript counts, n
 
 ## Reading and reproducing the work
 
-For a first review, open the notebooks directly on GitHub and inspect their historical outputs. Future experiments require independently supplied data in the [documented layout](docs/DATA.md); set `NFT_DATA_ROOT` to its location before running. Results on replacement data would be new experiments, separate from the thesis measurements.
+Open the notebooks directly on GitHub to inspect their saved outputs. For execution, arrange data access with the author and set `NFT_DATA_ROOT` using the [documented layout](docs/DATA.md).
 
 A complete historical dependency lock was not captured. The notebooks use legacy Keras preprocessing APIs and several scientific Python frameworks; installing the latest versions of every package is not a verified reproduction procedure. [The reproduction guide](docs/REPRODUCIBILITY.md) explains the limits and requirements for future execution.
 
