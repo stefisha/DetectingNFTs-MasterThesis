@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this research, cite the master's thesis identified below."
+type: software
+title: "Artificial Intelligence for Detecting Fake and Malicious NFTs — Research Code"
+authors:
+  - family-names: "Veličković"
+    given-names: "Stefan"
+repository-code: "https://github.com/stefisha/DetectingNFTs-MasterThesis"
+license: MIT
+keywords:
+  - NFT
+  - scam detection
+  - machine learning
+  - computer vision
+  - natural language processing
+preferred-citation:
+  type: thesis
+  title: "Примена вештачке интелигенције за препознавање лажних и малициозних NFT-ева"
+  authors:
+    - family-names: "Veličković"
+      given-names: "Stefan"
+  institution:
+    name: "University of Belgrade, School of Electrical Engineering"
+  year: 2023
+  month: 9
+  languages:
+    - sr
+  notes: "Unpublished master's thesis. Advisor: Prof. Dr. Boris Delibašić."

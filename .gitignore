@@ -1,0 +1,24 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/
+# Research data, credentials, and training artifacts stay local.
+data/
+datasets/
+checkpoints/
+results/
+logs/
+*.log
+*.keras
+*.h5
+*.pkl
+*.pt
+*.pth
+wandb/

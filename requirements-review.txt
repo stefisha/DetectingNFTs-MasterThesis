@@ -1,0 +1,3 @@
+# Documentation and notebook validation only; not a historical training lockfile.
+nbformat==5.10.4
+cffconvert==2.0.0

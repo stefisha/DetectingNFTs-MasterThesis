@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-labelledby="title description">
+  <title id="title">Detecting Fake and Malicious NFTs</title>
+  <desc id="description">Master's thesis by Stefan Veličković, University of Belgrade, School of Electrical Engineering, September 2023. Image, description, and domain classification.</desc>
+  <rect width="1280" height="320" rx="12" fill="#101d31"/>
+  <text x="56" y="63" fill="#99c9cd" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="2">MASTER'S THESIS · SEPTEMBER 2023</text>
+  <text x="56" y="131" fill="#f1f4f8" font-family="Georgia, 'Times New Roman', serif" font-size="45">Detecting Fake and</text>
+  <text x="56" y="185" fill="#f1f4f8" font-family="Georgia, 'Times New Roman', serif" font-size="45">Malicious NFTs</text>
+  <text x="56" y="239" fill="#c1ccd9" font-family="Arial, Helvetica, sans-serif" font-size="17">Stefan Veličković</text>
+  <text x="56" y="269" fill="#93a5bc" font-family="Arial, Helvetica, sans-serif" font-size="14">University of Belgrade · School of Electrical Engineering</text>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="835" y="72" width="385" height="52" rx="6" fill="#1b2c43"/>
+    <text x="855" y="104" fill="#99c9cd" font-size="13">01</text><text x="895" y="104" fill="#dce5ef" font-size="14" letter-spacing="1">NFT IMAGES</text>
+    <rect x="835" y="136" width="385" height="52" rx="6" fill="#1b2c43"/>
+    <text x="855" y="168" fill="#99c9cd" font-size="13">02</text><text x="895" y="168" fill="#dce5ef" font-size="14" letter-spacing="1">NFT DESCRIPTIONS</text>
+    <rect x="835" y="200" width="385" height="52" rx="6" fill="#1b2c43"/>
+    <text x="855" y="232" fill="#99c9cd" font-size="13">03</text><text x="895" y="232" fill="#dce5ef" font-size="14" letter-spacing="1">COLLECTION DOMAINS</text>
+  </g>
+</svg>
