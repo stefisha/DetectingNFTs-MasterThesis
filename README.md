@@ -33,7 +33,7 @@ The research provides:
 | NFT descriptions | [Metadata_NFTs_Master.ipynb](Metadata_NFTs_Master.ipynb) | TF-IDF, Word2Vec, classical classifiers, DistilBERT, FNN |
 | Collection domains | [Domains_NFT_Master.ipynb](Domains_NFT_Master.ipynb) | Lexical features, TF-IDF, Random Forest, SMOTE, LightGBM, XGBoost, recurrent networks |
 
-The notebooks retain their original filenames, code, and saved experiment outputs. Each notebook includes a corrected Colab link and a short orientation section.
+The notebooks retain their original filenames and saved experiment outputs. The code has received a documented maintenance pass; **saved outputs predate those edits and have not been regenerated**. See [code cleanup and verification](docs/CODE_CLEANUP.md) for changes, offline checks, and the original source revision.
 
 ## Reported findings
 
@@ -49,7 +49,7 @@ These figures are **reported thesis results**, not new measurements or independe
 
 ## Data and experimental scope
 
-The thesis describes data collection from Phantom's blocklists, NFT marketplaces, and a Kaggle collection dataset. The checked-in notebooks reference local Google Drive datasets; the full datasets, acquisition scripts, immutable split manifests, and trained checkpoints are not included here.
+The thesis describes data collection from Phantom's blocklists, NFT marketplaces, and a Kaggle collection dataset. **The original datasets are no longer available**, so the historical experiments cannot be reproduced from this repository. Acquisition scripts, immutable split manifests, and trained checkpoints are also absent.
 
 Labels are derived from the collection and blocklist sources used for the study. They are research labels, rather than independent guarantees about a token, creator, or collection. NFT images and third-party metadata remain subject to their respective owners' rights.
 
@@ -57,21 +57,22 @@ See [Data documentation](docs/DATA.md) for expected inputs, manuscript counts, n
 
 ## Reading and reproducing the work
 
-For a first review, open the notebooks directly on GitHub and inspect their saved outputs. To run an experiment, use the notebook's Colab link, provide the required datasets, and update its input paths.
+For a first review, open the notebooks directly on GitHub and inspect their historical outputs. Future experiments require independently supplied data in the [documented layout](docs/DATA.md); set `NFT_DATA_ROOT` to its location before running. Results on replacement data would be new experiments, separate from the thesis measurements.
 
-A complete historical dependency lock was not captured. The notebooks use legacy Keras preprocessing APIs and mixed scientific Python frameworks; installing the latest versions of every package is not a verified reproduction procedure. [The reproduction guide](docs/REPRODUCIBILITY.md) lists the framework families, input requirements, execution order, and checks needed before retraining.
+A complete historical dependency lock was not captured. The notebooks use legacy Keras preprocessing APIs and several scientific Python frameworks; installing the latest versions of every package is not a verified reproduction procedure. [The reproduction guide](docs/REPRODUCIBILITY.md) explains the limits and requirements for future execution.
 
 Lightweight repository checks can be run without downloading datasets or training models:
 
 ```sh
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -r requirements-review.txt
+python -m pip install -r requirements-test.txt
 python scripts/validate_repository.py
+python -m unittest discover -s tests -v
 cffconvert --validate
 ```
 
-On Windows, activate the environment with `.venv\Scripts\activate`. These checks validate notebook structure, documentation links, the results record, and citation metadata; they do not execute the research experiments.
+On Windows, activate the environment with `.venv\Scripts\activate`. These checks validate notebook syntax, historical-output preservation, documentation, citations, and selected code paths on synthetic inputs. They do not train models or reproduce research scores. Optional framework tests skip when TensorFlow/Pillow is absent.
 
 ## Limitations and further research
 
@@ -99,7 +100,8 @@ Metadata_NFTs_Master.ipynb   Description experiments and saved outputs
 Domains_NFT_Master.ipynb    Domain experiments and saved outputs
 docs/                      Data, results, methods, and reproduction notes
 assets/                    Repository presentation assets
-scripts/                   Non-executing repository validation
+scripts/                   Notebook syntax and repository validation
+tests/                     Offline synthetic regression checks
 CITATION.cff               Machine-readable research citation
 citation.bib               BibTeX thesis citation
 LICENSE                    MIT license for repository code

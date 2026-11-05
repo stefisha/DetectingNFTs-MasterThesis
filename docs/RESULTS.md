@@ -2,7 +2,7 @@
 
 The tables below transcribe the results reported in the author-provided September 2023 thesis, *Примена вештачке интелигенције за препознавање лажних и малициозних NFT-ева*. The manuscript has not been published or redistributed in this repository. Printed page numbers below differ from PDF page indices by one because the cover is unnumbered.
 
-These are historical reported measurements. No training or independent benchmark reproduction was performed as part of the repository presentation update.
+These are historical reported measurements. No training or independent benchmark reproduction was performed during repository maintenance. The original datasets are no longer available. Saved outputs predate the [code cleanup](CODE_CLEANUP.md) and do not validate the edited source.
 
 ## Thesis Table 4 — image classification
 
@@ -66,5 +66,5 @@ The repository does not record enough run identifiers, frozen environments, data
 
 - Each modality uses a different dataset and may use different split and preprocessing procedures. Ranking modalities by accuracy alone is not a controlled ablation study.
 - Accuracy does not fully describe performance under class imbalance. Precision, recall, F1, confusion matrices, and error costs should accompany future comparisons.
-- The image notebook computes `roc_auc_score` from predicted class labels in several cells. Those values are threshold-specific; future ranking-based ROC-AUC should use positive-class scores or probabilities.
+- The historical image notebook computed `roc_auc_score` from predicted class labels in several cells. Those saved values are threshold-specific. The edited source uses positive-class probabilities, but its outputs have not been regenerated.
 - The reported accuracies do not establish performance on unseen NFT collections, later scam campaigns, or a live production distribution.

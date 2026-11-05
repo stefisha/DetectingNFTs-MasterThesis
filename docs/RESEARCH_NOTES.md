@@ -14,12 +14,12 @@ Description experiments focus on descriptions rather than all NFT metadata. Sect
 
 ## Observations from the archived notebooks
 
-These observations concern the checked-in artifacts and should not be mistaken for newly measured performance:
+These observations concern the historical source and saved artifacts and should not be mistaken for newly measured performance. The [maintenance record](CODE_CLEANUP.md) identifies fixes in the current source; saved outputs remain historical:
 
 - Some saved results and narrative percentages differ from manuscript tables. See [the provenance record](RESULTS.md).
 - The notebooks do not provide collection-disjoint or temporal evaluation manifests. Random item-level splits may contain related examples; the actual degree of overlap is not established here.
-- TF-IDF, encoders, or embeddings are fitted on combined data before splitting in several branches. A new evaluation should fit learned transformations only on training data.
-- Some image ROC-AUC calls use class predictions rather than continuous scores. Some domain sequence-model training uses the test data for validation.
+- The historical source fitted TF-IDF, encoders, or embeddings on combined data before splitting in several branches. The edited source fits these on training partitions; optional internal domain CV diagnostics still need preprocessing fitted separately per fold.
+- Historical image ROC-AUC calls used class predictions, and domain sequence-model training used test data for validation. Current source uses probabilities and a separate validation partition; no revised scores are claimed.
 - Commented alternatives and incomplete saved outputs should be distinguished from executed experiments. The manuscript discusses more alternatives than can be confirmed from every current execution snapshot.
 - Historical source labels, domains, and NFT content should not be interpreted as present-day assessments of a project or person.
 

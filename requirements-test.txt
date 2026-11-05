@@ -1,0 +1,5 @@
+# Offline synthetic checks only; not an experiment reproduction environment.
+-r requirements-review.txt
+numpy==1.26.4
+pandas==2.2.3
+scikit-learn==1.4.2

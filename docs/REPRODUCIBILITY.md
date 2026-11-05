@@ -2,9 +2,9 @@
 
 ## What can be verified now
 
-The repository preserves three exploratory notebooks, their code, and saved outputs. Readers can inspect the experiments and compare the saved evidence with [reported thesis results](RESULTS.md). Repository checks validate file structure and presentation without training models.
+The repository preserves three exploratory notebooks and historical saved outputs. Their source has received a documented [code cleanup](CODE_CLEANUP.md); the saved outputs predate those edits and do not validate them. Readers can inspect the experiments and compare the saved evidence with [reported thesis results](RESULTS.md). Repository checks validate file structure and presentation without training models.
 
-The original data, trained checkpoints, a frozen environment, and complete run manifests are not included. End-to-end reproduction of the thesis scores therefore cannot currently be guaranteed.
+The original datasets are no longer available. Trained checkpoints, a frozen environment, and complete run manifests are also absent. The historical thesis experiments cannot be reproduced from this repository. Offline checks validate selected code paths using synthetic inputs only.
 
 ## Reviewing the notebooks
 
@@ -13,13 +13,13 @@ The original data, trained checkpoints, a frozen environment, and complete run m
 3. Use [data documentation](DATA.md) to identify the required external inputs.
 4. Compare saved outputs with [results provenance](RESULTS.md), keeping manuscript results distinct from notebook execution snapshots.
 
-## Executing an experiment
+## Running future experiments on independently supplied data
 
 1. Open the notebook through its Colab badge, or use a compatible local Jupyter environment. Private repositories require appropriate access.
-2. Obtain the required datasets and confirm that you may use them.
-3. Mount your own storage if needed and update the notebook's data paths.
+2. Supply suitable replacement datasets and confirm that you may use them. Results would be new experiments, separate from the historical thesis scores.
+3. Mount your own storage if needed and set `NFT_DATA_ROOT` to the root containing the documented `Images/`, `Metadata/`, and `Domains/` inputs. Missing inputs produce an explanatory error.
 4. Inspect the imports and any installation cells before execution. The code spans TensorFlow/Keras, scikit-learn, PyTorch/Transformers, Gensim, XGBoost, LightGBM, and imbalanced-learn.
-5. Choose an environment supporting the legacy APIs used by that notebook. For example, `keras.preprocessing.text` and `keras.preprocessing.image.ImageDataGenerator` belong to older Keras workflows. A current default Colab runtime may need compatibility changes.
+5. Choose an environment supporting the legacy APIs used by that notebook. For example, `tensorflow.keras.preprocessing.text.Tokenizer` and `tensorflow.keras.preprocessing.image.ImageDataGenerator` belong to older Keras workflows. A current default Colab runtime may need compatibility changes.
 6. Execute cells in order from a clean kernel. Some experiments reuse variables such as `model`, `X_train`, and `y_train`; isolate a model's construction, training, and evaluation when comparing runs.
 7. Record the exact environment, data checksums, seed settings, preprocessing, split assignments, hardware, and run identifier with each result.
 
@@ -27,24 +27,25 @@ The thesis describes Colab CPU, GPU, and TPU resources. The image notebook has G
 
 ## Split and evaluation review
 
-The image notebook records stratified 70/15/15 splitting with `random_state=42`. Description and domain experiments mostly use 80/20 splits; not every branch uses the same stratification or validation procedure.
+The image source uses stratified 70/15/15 splitting with `random_state=42`. The edited description and domain source uses stratified 80/20 outer train/test splits; the transformer, description FNN, and domain recurrent branches reserve 20% of the training partition for validation. Historical saved outputs reflect earlier source and execution state.
 
 Before making new benchmark claims:
 
-- Fit vocabularies, encoders, and other learned preprocessing on training data only.
+- Keep learned preprocessing confined to training data; optional internal domain CV still needs a pipeline fitted separately within each fold.
 - Group related NFT items by collection and control exact and near duplicates.
-- Separate model selection from the final test set. Some archived sequence-model training uses the test partition as validation data.
+- Keep model selection separate from the final test set and record the exact item assignments. The edited sequence-model source separates validation from test data.
 - Use suitable positive-class scores for ROC-AUC and report class-specific errors.
 - Repeat experiments across seeds and report uncertainty and class distributions.
 
-These are recommendations for future replication, not changes made to the original research code.
+The maintenance pass addresses identifiable source defects, but does not establish a validated benchmark or resolve the broader data and evaluation limitations. See [the cleanup record](CODE_CLEANUP.md) for the exact scope.
 
 ## Lightweight validation
 
 ```sh
-python -m pip install -r requirements-review.txt
+python -m pip install -r requirements-test.txt
 python scripts/validate_repository.py
+python -m unittest discover -s tests -v
 cffconvert --validate
 ```
 
-`requirements-review.txt` is a tooling environment, not a training environment. These commands require no datasets, API credentials, model downloads, or experiment execution.
+`requirements-test.txt` supplies lightweight test dependencies; `requirements-review.txt` supplies documentation tooling only. Neither is a historical training lockfile. These commands require no research datasets, API credentials, model downloads, or training. Optional framework checks skip if TensorFlow/Pillow is absent. No complete clean-kernel training run is claimed.

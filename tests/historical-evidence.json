@@ -1,0 +1,9 @@
+{
+  "baseline_commit": "c4d269b00887d0ce3039511714836d9d66d49970",
+  "description": "SHA-256 of original ordered cells excluding source; includes historical outputs, execution counts, and cell metadata.",
+  "notebooks": {
+    "Domains_NFT_Master.ipynb": "90513dab110ea11f5ad27e2ab287f8349336bf137893b19ff0bf46e4d0f2671e",
+    "Metadata_NFTs_Master.ipynb": "7cec0f08be5f7f71204ce1952fa0bcd058edfe33f37375ab104b4a9ecefe71ff",
+    "Images_NFTs_Master.ipynb": "cf1953fcdac9dc6417c8bfa6b065c439bf952136b18f762d1ffe3e60ae74b102"
+  }
+}
