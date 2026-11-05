@@ -1,4 +1,4 @@
-![Detecting Fake and Malicious NFTs — master's thesis, University of Belgrade](assets/research-banner.svg)
+![Detecting Fake and Malicious NFTs — master's thesis, University of Belgrade](assets/research-banner.png)
 
 # Artificial Intelligence for Detecting Fake and Malicious NFTs
 
