@@ -43,6 +43,18 @@ def functions(notebook, position, namespace):
 
 
 class NotebookTests(unittest.TestCase):
+    def test_widget_metadata_accepts_manager_state_and_rejects_legacy_shape(self):
+        from scripts.validate_repository import validate_widget_metadata
+
+        notebook = json.loads((ROOT / "Metadata_NFTs_Master.ipynb").read_text())
+        validate_widget_metadata(notebook)
+        mime = "application/vnd.jupyter.widget-state+json"
+        manager = notebook["metadata"]["widgets"][mime]
+        self.assertEqual(len(manager["state"]), 11)
+        notebook["metadata"]["widgets"][mime] = manager["state"]
+        with self.assertRaisesRegex(ValueError, "state mapping"):
+            validate_widget_metadata(notebook)
+
     def test_missing_data_has_actionable_error(self):
         for name, position in (
             ("Images_NFTs_Master.ipynb", 3),
